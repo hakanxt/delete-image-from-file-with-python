@@ -3,6 +3,7 @@ import pandas as pd
 
 path = "images"
 flist = pd.read_csv('my_sql_table.csv', encoding = 'ISO-8859-1', on_bad_lines='skip')
+#encoding = 'UTF-8' 
 
 file_name = flist['column_name'].tolist()
 
