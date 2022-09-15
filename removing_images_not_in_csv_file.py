@@ -1,16 +1,14 @@
 import os
 import pandas as pd
 
-path = "cicekci-bpr"
-#pd.read_csv('C:/Users/hakan/OneDrive/Masaüstü/silinecek/urunler2.csv', encoding = 'ISO-8859-1', on_bad_lines='skip')
-flist = pd.read_csv('urunler2.csv', encoding = 'ISO-8859-1', on_bad_lines='skip')
+path = "images"
+flist = pd.read_csv('data.csv', encoding = 'ISO-8859-1', on_bad_lines='skip')
 
-file_name = flist['buyukresim'].tolist()
+file_name = flist['column_name'].tolist()
 
-for buyukresim in os.listdir(path):
-    if buyukresim not in file_name:
-        print(buyukresim)
-        full_file_path = os.path.join(path, buyukresim)
+for column_name in os.listdir(path):
+    if column_name not in file_name:
+        print(column_name)
+        full_file_path = os.path.join(path, column_name)
         os.remove(full_file_path)
-        #if buyukresim not in file_name:
-            #os.remove(buyukresim)
+
